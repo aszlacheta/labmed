@@ -68,4 +68,13 @@ By sprawdzić czy wszystko działa w konsoli wpisz `composer -V`. Jeśli wyrzuca
 3. Sprawdź czy wpisanie w konsolę polecenia `laravel -V` nie powoduje błędu. Jeśli tak, prawodpodobnie brakuje laravel'a w PATH'ie (podobny problem jak w kroku 1wszym).
 
 4. Utworzenie przykładowego projektu odbywa się za pomocą:
-`laravel new [nazwa projektu]', gdzie *[nazwa projektu]* to wymyślona przez Ciebie nazwa.
+`laravel new [nazwa projektu]', gdzie *[nazwa projektu]* to wymyślona przez Ciebie nazwa - oczywiście nie jest to wymagane, jako że projekt **labmed** jest już utworzony.
+
+
+## Użyteczne linki - Laravel
+* Oficjalna dokumentacja Laravel http://laravel.com/docs/5.1
+* Polska dokumentacja Laravel (tylko dla 4.0, a my mamy 5.1 - pozwala zrozumieć o co cho) http://laravel-docs.pl/
+* Dwa tutoriale, które pozwoliły mi zrozumieć co jak się je: 
+  * http://www.sitepoint.com/bootstrapping-laravel-crud-project/
+  * http://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
+* Mnóstwo filmów dokumentujących dewelopowanie w Laravel https://laracasts.com/skills/laravel
