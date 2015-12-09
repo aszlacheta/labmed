@@ -70,6 +70,8 @@ By sprawdzić czy wszystko działa w konsoli wpisz `composer -V`. Jeśli wyrzuca
 4. Utworzenie przykładowego projektu odbywa się za pomocą:
 `laravel new [nazwa projektu]', gdzie *[nazwa projektu]* to wymyślona przez Ciebie nazwa - oczywiście nie jest to wymagane, jako że projekt **labmed** jest już utworzony.
 
+5. Zaimportuj projekt do swojego IDE i utwórz plik `.env` w głównym folderze projektu, kopiując zawartość pliku `.env.example`. Zmień w nim jedynie ustawienia bazy - jej nazwę, użytkownika i hasło (musisz ją wcześniej utworzyć w phpMyAdminie http://localhost/phpmyadmin
+
 
 ## Użyteczne linki - Laravel
 * Oficjalna dokumentacja Laravel http://laravel.com/docs/5.1
@@ -78,3 +80,37 @@ By sprawdzić czy wszystko działa w konsoli wpisz `composer -V`. Jeśli wyrzuca
   * http://www.sitepoint.com/bootstrapping-laravel-crud-project/
   * http://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
 * Mnóstwo filmów dokumentujących dewelopowanie w Laravel https://laracasts.com/skills/laravel
+
+
+# Development w Laravel
+## Informacje ogólne
+MVC w Laravel opiera się na definiowaniu Controllerów, Widoków (w postaci plików blade.php) i Modeli. Mapowanie poszczególnych kontrolerów odbywa się za pomocą Routerów.
+
+## Routes
+Plik **routes.php** (który można znaleźć w *app/Http/routes.php*) odpowiada za routowanie na stronie, tj. przypisywanie odpowiednim aliasom URL odpowiednich kontrolerów (które dalej nawigują po stronie).
+### Przykład
+*Route::resource('odczynniki', 'OdczynnikiController');* odpowiada za podpięcie zachowania strony oraz WebService'ów (REST) do kontrolera *OdczynnikiController* tj. po wpisaniu w przeglądarkę http://localhost/labmed/public/odczynniki możemy wykonać akcje zadeklarowane w kontrolerze.
+
+## Controllers
+Pliki kontrolerów można znaleźć w *app/Http/Controllers*. Kontrolery odpowiadają za zachowanie się strony (załadowanie, RESTy etc.).
+### Przykład
+**OdczynnikiController** odpowiada za zachowanie strony po wpisaniu w pasek adresu http://localhost/labmed/public/odczynniki. 
+Metoda **index()** odpowiada za załadowanie strony, \n
+Metoda **create()** odpowiada za RESTową metodę PUT, \n
+Metoda **destroy()** odpowiada za RESTową metodę DELETE itd.
+Kontroler można utworzyć za pomocą polecenia: `php artisan make:controller nazwa_kontrollera`.
+
+## Views
+Pliki widoków można znaleźć w *resources/views/[layouts|odczynniki|pages|sprzet_jednorazowy|urzadzenia]/.blade.php*. Są to strony html z zawartymi znacznikami Laravel, które zazwyczaj przekazują informacje o przesyłanych do widoku obiektach. Pierwszym widokiem, który zostaje załadowany jest *layout/master.blade.php* - zawiera ono pole 'content', które doładowywane jest w postaci pozostałych podstron (np. odczynniki/index.blade.php).
+
+## Models
+Pliki modeli znajdują się w *app/(...).php*. Odpowiadają za połączenia między tabelami (foreign keys) bądź definiują nazwę tabeli. Modele można utworzyć za pomocą `php artisan make:model nazwa_modelu`.
+
+## Pliki bazy danych
+Migracje czyli *migrations* w Laravel to pliki, które definiują schematy tabeli w bazie danych. Znajdują się w *database/migrations*.
+Uruchamianie migracji (czyli tak naprawdę stawianie bazy) odbywa się za pomocą `php artisan migrate`, a stworzenie migracji `
+php artisan make:migration nazwa_migracji --create=nazwa_tabeli`.
+
+## Przykładowa kolejność załadowania elementów
+1. Plik `app/Http/routes.php` informuje, że RESTowego zapytania GET dla strony głównej projektu (http://localhost/labmed/public) ma załadować widok *home* i kontroler *PagesController*, a dokładniej metodę *home()*.
+2. Załadowywany jest widok *pages/home.blade.php*, ale jako że ten widok extenduje główny widok (master) to wyświetlana jest całość.

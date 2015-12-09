@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'PagesController@home'
+]);
+Route::resource('odczynniki', 'OdczynnikiController');
+Route::resource('urzadzenia', 'UrzadzeniaController');
+Route::resource('material_biologiczny', 'MaterialBiologicznyController');
+Route::resource('sprzet_jednorazowy', 'SprzetJednorazowyController');
+
