@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\SprzetJednorazowyPodtyp;
 use Illuminate\Http\Request;
+use DB;
 
 use App\SprzetJednorazowy;
 use App\Http\Requests;
@@ -18,8 +19,7 @@ class SprzetJednorazowyController extends Controller
      */
     public function index()
     {
-        $sprzetJednorazowy = SprzetJednorazowy::with(array('sprzetJednorazowyTyp'))->get();
-//        $sprzetJednorazowy = SprzetJednorazowy::with(array('sprzetJednorazowyPodtypp'))->get();
+        $sprzetJednorazowy = SprzetJednorazowy::get();
         return view('sprzet_jednorazowy.index')->withSprzetJednorazowy($sprzetJednorazowy);
     }
 

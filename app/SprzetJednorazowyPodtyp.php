@@ -10,6 +10,6 @@ class SprzetJednorazowyPodtyp extends Model
 
     public function sprzetJednorazowy()
     {
-        return $this->belongsTo('App\SprzetJednorazowy', 'sprzet_jedn_podtyp');
+        return $this->belongsTo('App\SprzetJednorazowy', 'podtyp');
     }
 }

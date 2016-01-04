@@ -17,7 +17,7 @@ class UrzadzeniaController extends Controller
      */
     public function index()
     {
-        $urzadzenia = Urzadzenia::with(array('urzadzeniaTyp'))->get();
+        $urzadzenia = Urzadzenia::get();
         return view('urzadzenia.index')->withUrzadzenia($urzadzenia);
     }
 

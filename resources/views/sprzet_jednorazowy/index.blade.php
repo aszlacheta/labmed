@@ -34,7 +34,7 @@
                 <td>{{ $sprzet->czas_gwarancji }}</td>
                 <td>{{ $sprzet->lokalizacja }}</td>
                 <td>{{ $sprzet->sprzetJednorazowyTyp->nazwa_sprzet_jedn_typ }}</td>
-                <td> {{ $sprzet->sprzet_jedn_podtyp }} </td>
+                <td> {{ $sprzet->sprzetJednorazowyPodtyp->nazwa_sprzet_jedn_podtyp }} </td>
                 <td>{{ $sprzet->asortyment }}</td>
             </tr>
         @endforeach

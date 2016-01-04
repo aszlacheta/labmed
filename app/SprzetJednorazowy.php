@@ -13,7 +13,7 @@ class SprzetJednorazowy extends Model
         return $this->hasOne('App\SprzetJednorazowyTyp', 'id');
     }
 
-    public function sprzetJednorazowyPodtypp()
+    public function sprzetJednorazowyPodtyp()
     {
         return $this->hasOne('App\SprzetJednorazowyPodtyp', 'id');
     }

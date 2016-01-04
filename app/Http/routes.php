@@ -11,12 +11,25 @@
 |
 */
 
+
+// Authentication routes...
+Route::get('auth/login', 'UsersController@create');
+Route::post('auth/login', 'UsersController@show');
+Route::get('auth/logout', 'UsersController@destroy');
+
+// Registration routes...
+Route::post('/register', 'UsersController@store');
+
 Route::get('/', [
     'as' => 'home',
+    'middleware' => 'auth',
     'uses' => 'PagesController@home'
 ]);
-Route::resource('odczynniki', 'OdczynnikiController');
-Route::resource('urzadzenia', 'UrzadzeniaController');
-Route::resource('material_biologiczny', 'MaterialBiologicznyController');
-Route::resource('sprzet_jednorazowy', 'SprzetJednorazowyController');
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('odczynniki', 'OdczynnikiController');
+    Route::resource('urzadzenia', 'UrzadzeniaController');
+    Route::resource('material_biologiczny', 'MaterialBiologicznyController');
+    Route::resource('sprzet_jednorazowy', 'SprzetJednorazowyController');
+});
 

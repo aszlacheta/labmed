@@ -17,7 +17,7 @@ class MaterialBiologicznyController extends Controller
      */
     public function index()
     {
-        $materialBiologiczny = MaterialBiologiczny::with(array('materialBiologicznyTyp'))->get();
+        $materialBiologiczny = MaterialBiologiczny::get();
         return view('material_biologiczny.index')->withMaterialBiologiczny($materialBiologiczny);
     }
 

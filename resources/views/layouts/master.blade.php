@@ -18,6 +18,8 @@
             <li><a href="{{ route('urzadzenia.index') }}">Urządzenia</a></li>
             <li><a href="{{ route('sprzet_jednorazowy.index') }}">Sprzęt jednorazowy</a></li>
             <li><a href="{{ route('material_biologiczny.index') }}">Materiał biologiczny</a></li>
+            <li><a href="{{Auth::check() ? url('auth/logout') : url('auth/login')}}"><i
+                            class="fa fa-lock"></i> {{Auth::check() ? 'Logout' : 'Login'}}</a></li>
         </div>
     </div>
 </nav>

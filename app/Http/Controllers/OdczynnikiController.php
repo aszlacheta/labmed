@@ -17,8 +17,7 @@ class OdczynnikiController extends Controller
      */
     public function index()
     {
-        $odczynniki = Odczynnik::with(array('odczynnikiTyp'))->get();
-        $odczynniki = Odczynnik::with(array('temperatura'))->get();
+        $odczynniki = Odczynnik::get();
         return view('odczynniki.index')->withOdczynniki($odczynniki);
     }
 
