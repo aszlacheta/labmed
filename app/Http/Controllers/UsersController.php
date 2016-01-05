@@ -50,7 +50,7 @@ class UsersController extends Controller
             ]);
         }
 
-        return view('pages.home');
+        return Redirect::to('/auth/login')->with('successfullyRegistered', 'Konto utworzone. Zaloguj się.');
     }
 
     /**

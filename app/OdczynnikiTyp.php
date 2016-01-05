@@ -10,6 +10,6 @@ class OdczynnikiTyp extends Model
 
     public function odczynniki()
     {
-        return $this->belongsTo('App\Odczynnik', 'odczynnik_typ_fk');
+        return $this->belongsTo('App\Odczynnik', 'odczynnik_typ_id');
     }
 }

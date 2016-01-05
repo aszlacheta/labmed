@@ -10,6 +10,6 @@ class MaterialBiologiczny extends Model
 
     public function materialBiologicznyTyp()
     {
-        return $this->hasOne('App\MaterialBiologicznyTyp', 'id');
+        return $this->hasOne('App\MaterialBiologicznyTyp', 'ID');
     }
 }

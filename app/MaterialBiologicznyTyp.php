@@ -10,6 +10,6 @@ class MaterialBiologicznyTyp extends Model
 
     public function materialBiologiczny()
     {
-        return $this->belongsTo('App\MaterialBiologiczny', 'fk_typ');
+        return $this->belongsTo('App\MaterialBiologiczny', 'material_biologiczny_typ_id');
     }
 }

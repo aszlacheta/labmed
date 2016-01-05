@@ -12,23 +12,23 @@
             <th>ID</th>
             <th>Nazwa</th>
             <th>Firma</th>
-            <th>Numer katalogowy</th>
-            <th>Ilosc</th>
+            <th>Numer kat.</th>
+            <th>Ilość</th>
             <th>Jednostka</th>
             <th>Masa molowa</th>
             <th>Data ważności</th>
             <th>Cena za sztukę</th>
             <th>Data dodania</th>
             <th>Lokalizacja</th>
-            <th>Typ</th>
             <th>Temperatura</th>
+            <th>Typ</th>
             <th>Asortyment (ID)</th>
         </tr>
         </thead>
         <tbody>
         @foreach($odczynniki as $odczynnik)
             <tr>
-                <td>{{ $odczynnik->id }}</td>
+                <td>{{ $odczynnik->ID }}</td>
                 <td>{{ $odczynnik->nazwa }}</td>
                 <td>{{ $odczynnik->firma }}</td>
                 <td>{{ $odczynnik->numer_kat }}</td>
@@ -39,9 +39,9 @@
                 <td>{{ $odczynnik->cena_za_szt }}</td>
                 <td>{{ $odczynnik->data_dodania }}</td>
                 <td>{{ $odczynnik->lokalizacja }}</td>
-                <td>{{ $odczynnik->odczynnikiTyp->nazwa }}</td>
-                <td>{{ $odczynnik->temperatura->wartosc }}</td>
-                <td>{{ $odczynnik->asortyment_fk }}</td>
+                <td>{{ $odczynnik->temperatura }}</td>
+                <td>{{ $odczynnik->odczynnik_typ_id }}</td>
+                <td>{{ $odczynnik->asortyment_id }}</td>
             </tr>
         @endforeach
 

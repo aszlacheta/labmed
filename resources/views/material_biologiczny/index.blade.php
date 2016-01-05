@@ -10,31 +10,45 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>rodzaj_komorek</th>
-            <th>rodzaj_tkanki</th>
-            <th>nazwa</th>
-            <th>data_zamrozenia</th>
-            <th>temperatura_przechowywania</th>
-            <th>sposob_utrwalenia</th>
-            <th>obserwacje</th>
-            <th>rodzaj_probowki</th>
-            <th>stezenie</th>
-            <th>objetosc_probki</th>
-            <th>data_gwarancji</th>
-            <th>lokalizacja</th>
-            <th>fk_asortyment</th>
-            <th>fk_typ</th>
+            <th>Rodzaj komórek</th>
+            <th>Rodzaj tkanki</th>
+            <th>Firma</th>
+            <th>Data dostarczenia</th>
+            <th>Data izolacji</th>
+            <th>Organizm</th>
+            <th>Data zamrożenia</th>
+            <th>Temperatura przechowywania</th>
+            <th>Ilość komórek</th>
+            <th>Stężenie RNA</th>
+            <th>Stężenie DNA</th>
+            <th>Objętość tkanki</th>
+            <th>Sposób utrwalenia</th>
+            <th>Obserwacje</th>
+            <th>Rodzaj probówki</th>
+            <th>Stężęnie</th>
+            <th>Objętość próbki</th>
+            <th>Data gwarancji</th>
+            <th>Lokalizacja</th>
+            <th>Typ</th>
+            <th>Asortyment (ID)</th>
         </tr>
         </thead>
         <tbody>
         @foreach($material_biologiczny as $material)
             <tr>
-                <td>{{ $material->id }}</td>
+                <td>{{ $material->ID }}</td>
                 <td>{{ $material->rodzaj_komorek }}</td>
                 <td>{{ $material->rodzaj_tkanki }}</td>
-                <td>{{ $material->nazwa }}</td>
+                <td>{{ $material->firma }}</td>
+                <td>{{ $material->data_dostarczenia }}</td>
+                <td>{{ $material->data_izolacji }}</td>
+                <td>{{ $material->organizm }}</td>
                 <td>{{ $material->data_zamrozenia }}</td>
                 <td>{{ $material->temperatura_przechowywania }}</td>
+                <td>{{ $material->ilosc_komorek }}</td>
+                <td>{{ $material->stezenie_RNA }}</td>
+                <td>{{ $material->stezenie_DNA }}</td>
+                <td>{{ $material->objetosc_tkanki }}</td>
                 <td>{{ $material->sposob_utrwalenia }}</td>
                 <td>{{ $material->obserwacje }}</td>
                 <td>{{ $material->rodzaj_probowki }}</td>
@@ -42,8 +56,8 @@
                 <td>{{ $material->objetosc_probki }}</td>
                 <td>{{ $material->data_gwarancji }}</td>
                 <td>{{ $material->lokalizacja }}</td>
-                <td>{{ $material->fk_asortyment }}</td>
-                <td>{{ $material->materialBiologicznyTyp->nazwa }}</td>
+                <td>{{ $material->material_biologiczny_typ_id }}</td>
+                <td>{{ $material->asortyment_id }}</td>
             </tr>
         @endforeach
 

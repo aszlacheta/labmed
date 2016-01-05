@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Urzadzenia extends Model
 {
-    protected $table = 'urzadzenia';
+    protected $table = 'urzadzenie';
 
     public function urzadzeniaTyp()
     {
-        return $this->hasOne('App\UrzadzeniaTyp', 'id');
+        return $this->hasOne('App\UrzadzeniaTyp', 'ID');
     }
 
     public function asortyment()
     {
-        return $this->hasOne('App\Asortyment', 'id');
+        return $this->hasOne('App\Asortyment', 'ID');
     }
 }

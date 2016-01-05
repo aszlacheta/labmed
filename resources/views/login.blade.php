@@ -5,6 +5,9 @@
     @if ($alert = Session::get('successfullyLoggedOut'))
         <div class="alert alert-info">{{ $alert }}</div> @endif
 
+    @if ($alert = Session::get('successfullyRegistered'))
+        <div class="alert alert-info">{{ $alert }}</div> @endif
+
     <section id="form"><!--form-->
         <div class="container">
             <div class="row">

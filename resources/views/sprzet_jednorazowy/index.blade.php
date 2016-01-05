@@ -10,32 +10,45 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>nazwa_sprzet_jedn</th>
-            <th>numer_kat</th>
-            <th>ilosc</th>
-            <th>data_zakupu</th>
-            <th>data_wymiany</th>
-            <th>czas_gwarancji</th>
-            <th>lokalizacja</th>
-            <th>sprzet_jedn_typ</th>
-            <th>sprzet_jedn_podtyp</th>
-            <th>asortyment</th>
+            <th>Nazwa</th>
+            <th>Firma</th>
+            <th>Numer kat.</th>
+            <th>Pojemność</th>
+            <th>Kalibracja</th>
+            <th>Data naprawy</th>
+            <th>Opis naprawy</th>
+            <th>Data zakupu</th>
+            <th>Data wymiay filtra</th>
+            <th>Czas gwarancji</th>
+            <th>Lokalizacja</th>
+            <th>Typ</th>
+            <th>Podtyp</th>
+            <th>Asortyment (ID)</th>
+            <th>Ilość</th>
+            <th>Cena za szt.</th>
         </tr>
         </thead>
         <tbody>
         @foreach($sprzet_jednorazowy as $sprzet)
             <tr>
-                <td>{{ $sprzet->id }}</td>
-                <td>{{ $sprzet->nazwa_sprzet_jedn }}</td>
+                <td>{{ $sprzet->ID }}</td>
+                <td>{{ $sprzet->nazwa }}</td>
+                <td>{{ $sprzet->firma }}</td>
                 <td>{{ $sprzet->numer_kat }}</td>
-                <td>{{ $sprzet->ilosc }}</td>
+                <td>{{ $sprzet->pojemnosc }}</td>
+                <td>{{ $sprzet->kalibracja }}</td>
+                <td>{{ $sprzet->data_naprawy }}</td>
+                <td>{{ $sprzet->opis_naprawy }}</td>
                 <td>{{ $sprzet->data_zakupu }}</td>
-                <td>{{ $sprzet->data_wymiany }}</td>
+                <td>{{ $sprzet->data_wymiany_filtr }}</td>
                 <td>{{ $sprzet->czas_gwarancji }}</td>
                 <td>{{ $sprzet->lokalizacja }}</td>
-                <td>{{ $sprzet->sprzetJednorazowyTyp->nazwa_sprzet_jedn_typ }}</td>
-                <td> {{ $sprzet->sprzetJednorazowyPodtyp->nazwa_sprzet_jedn_podtyp }} </td>
-                <td>{{ $sprzet->asortyment }}</td>
+                <td>{{ $sprzet->sprzet_jedn_typ_id }}</td>
+                <td>{{ $sprzet->sprzet_jedn_podtyp_id }}</td>
+                <td>{{ $sprzet->asortyment_id }}</td>
+                <td>{{ $sprzet->ilosc }}</td>
+                <td>{{ $sprzet->cena_za_szt }}</td>
+
             </tr>
         @endforeach
 
