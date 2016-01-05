@@ -8,13 +8,13 @@ class Urzadzenia extends Model
 {
     protected $table = 'urzadzenie';
 
-    public function urzadzeniaTyp()
+    public function typ()
     {
-        return $this->hasOne('App\UrzadzeniaTyp', 'ID');
+        return $this->belongsTo('App\UrzadzeniaTyp', 'urzadzenie_typ_id', 'ID');
     }
 
     public function asortyment()
     {
-        return $this->hasOne('App\Asortyment', 'ID');
+        return $this->belongsTo('App\Asortyment', 'asortyment_id', 'ID');
     }
 }

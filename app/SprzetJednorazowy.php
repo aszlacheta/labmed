@@ -8,18 +8,18 @@ class SprzetJednorazowy extends Model
 {
     protected $table = 'sprzet_jedn';
 
-    public function sprzetJednorazowyTyp()
+    public function typ()
     {
-        return $this->hasOne('App\SprzetJednorazowyTyp', 'ID');
+        return $this->belongsTo('App\SprzetJednorazowyTyp', 'sprzet_jedn_typ_id', 'ID');
     }
 
-    public function sprzetJednorazowyPodtyp()
+    public function podtyp()
     {
-        return $this->hasOne('App\SprzetJednorazowyPodtyp', 'ID');
+        return $this->belongsTo('App\SprzetJednorazowyPodtyp', 'sprzet_jedn_podtyp_id', 'ID');
     }
 
     public function asortyment()
     {
-        return $this->hasOne('App\Asortyment', 'ID');
+        return $this->belongsTo('App\Asortyment', 'asortyment_id', 'ID');
     }
 }

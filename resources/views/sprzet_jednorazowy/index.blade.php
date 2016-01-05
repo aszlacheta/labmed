@@ -23,7 +23,7 @@
             <th>Lokalizacja</th>
             <th>Typ</th>
             <th>Podtyp</th>
-            <th>Asortyment (ID)</th>
+            <th>Asortyment</th>
             <th>Ilość</th>
             <th>Cena za szt.</th>
         </tr>
@@ -43,9 +43,9 @@
                 <td>{{ $sprzet->data_wymiany_filtr }}</td>
                 <td>{{ $sprzet->czas_gwarancji }}</td>
                 <td>{{ $sprzet->lokalizacja }}</td>
-                <td>{{ $sprzet->sprzet_jedn_typ_id }}</td>
-                <td>{{ $sprzet->sprzet_jedn_podtyp_id }}</td>
-                <td>{{ $sprzet->asortyment_id }}</td>
+                <td>{{ $sprzet->typ->nazwa }}</td>
+                <td>{{ $sprzet->podtyp->nazwa }}</td>
+                <td>{{ $sprzet->asortyment->nazwa }}</td>
                 <td>{{ $sprzet->ilosc }}</td>
                 <td>{{ $sprzet->cena_za_szt }}</td>
 

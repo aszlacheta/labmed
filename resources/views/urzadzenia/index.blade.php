@@ -31,8 +31,8 @@
                 <td>{{ $urzadzenie->data_wymiany_filtr }}</td>
                 <td>{{ $urzadzenie->czas_gwarancji }}</td>
                 <td>{{ $urzadzenie->lokalizacja }}</td>
-                <td>{{ $urzadzenie->urzadzenie_typ_id }}</td>
-                <td>{{ $urzadzenie->asortyment_id }}</td>
+                <td>{{ $urzadzenie->typ->typ }}</td>
+                <td>{{ $urzadzenie->asortyment->nazwa }}</td>
                 <td>{{ $urzadzenie->ilosc }}</td>
             </tr>
         @endforeach

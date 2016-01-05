@@ -8,8 +8,13 @@ class MaterialBiologiczny extends Model
 {
     protected $table = 'material_biologiczny';
 
-    public function materialBiologicznyTyp()
+    public function typ()
     {
-        return $this->hasOne('App\MaterialBiologicznyTyp', 'ID');
+        return $this->belongsTo('App\MaterialBiologicznyTyp', 'material_biologiczny_typ_id', 'ID');
+    }
+
+    public function asortyment()
+    {
+        return $this->belongsTo('App\Asortyment', 'asortyment_id', 'ID');
     }
 }

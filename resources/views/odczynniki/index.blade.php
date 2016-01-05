@@ -22,7 +22,7 @@
             <th>Lokalizacja</th>
             <th>Temperatura</th>
             <th>Typ</th>
-            <th>Asortyment (ID)</th>
+            <th>Asortyment</th>
         </tr>
         </thead>
         <tbody>
@@ -40,8 +40,8 @@
                 <td>{{ $odczynnik->data_dodania }}</td>
                 <td>{{ $odczynnik->lokalizacja }}</td>
                 <td>{{ $odczynnik->temperatura }}</td>
-                <td>{{ $odczynnik->odczynnik_typ_id }}</td>
-                <td>{{ $odczynnik->asortyment_id }}</td>
+                <td>{{ $odczynnik->typ->typ }}</td>
+                <td>{{ $odczynnik->asortyment->nazwa }}</td>
             </tr>
         @endforeach
 

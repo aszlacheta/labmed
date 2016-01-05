@@ -30,7 +30,7 @@
             <th>Data gwarancji</th>
             <th>Lokalizacja</th>
             <th>Typ</th>
-            <th>Asortyment (ID)</th>
+            <th>Asortyment</th>
         </tr>
         </thead>
         <tbody>
@@ -56,8 +56,8 @@
                 <td>{{ $material->objetosc_probki }}</td>
                 <td>{{ $material->data_gwarancji }}</td>
                 <td>{{ $material->lokalizacja }}</td>
-                <td>{{ $material->material_biologiczny_typ_id }}</td>
-                <td>{{ $material->asortyment_id }}</td>
+                <td>{{ $material->typ->nazwa }}</td>
+                <td>{{ $material->asortyment->nazwa }}</td>
             </tr>
         @endforeach
 

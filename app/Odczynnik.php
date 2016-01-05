@@ -8,8 +8,13 @@ class Odczynnik extends Model
 {
     protected $table = 'odczynnik';
 
-    public function odczynnikiTyp()
+    public function typ()
     {
-        return $this->hasOne('App\OdczynnikiTyp', 'ID');
+        return $this->belongsTo('App\OdczynnikiTyp', 'odczynnik_typ_id', 'ID');
+    }
+
+    public function asortyment()
+    {
+        return $this->belongsTo('App\Asortyment', 'asortyment_id', 'ID');
     }
 }
