@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Odczynnik extends Model
 {
     protected $table = 'odczynnik';
+    public $timestamps = false;
 
     public function typ()
     {

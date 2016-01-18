@@ -4,7 +4,9 @@
 
     <h1>Lista dostępnych odczynników</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące odczynniki.</p>
+	<a href="{{ route('odczynniki.create') }}">Dodaj</a>
     <hr>
+
 
     <table class="table table-striped">
         <thead>
@@ -23,6 +25,7 @@
             <th>Temperatura</th>
             <th>Typ</th>
             <th>Asortyment</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -42,6 +45,7 @@
                 <td>{{ $odczynnik->temperatura }}</td>
                 <td>{{ $odczynnik->typ->typ }}</td>
                 <td>{{ $odczynnik->asortyment->nazwa }}</td>
+                <td><a href="{{ route('odczynniki.show', $odczynnik->ID) }}">zarządzaj</a></td>
             </tr>
         @endforeach
 
