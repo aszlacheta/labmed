@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Urzadzenia extends Model
 {
     protected $table = 'urzadzenie';
+    public $timestamps = false;
 
     public function typ()
     {

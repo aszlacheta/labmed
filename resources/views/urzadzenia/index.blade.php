@@ -4,6 +4,7 @@
 
     <h1>Lista dostępnych urządzeń</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące urządzenia.</p>
+    <a href="{{ route('urzadzenia.create') }}">Dodaj</a>
     <hr>
 
     <table class="table table-striped">
@@ -19,6 +20,7 @@
             <th>Typ</th>
             <th>Asortyment</th>
             <th>Ilość</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -34,6 +36,7 @@
                 <td>{{ $urzadzenie->typ->typ }}</td>
                 <td>{{ $urzadzenie->asortyment->nazwa }}</td>
                 <td>{{ $urzadzenie->ilosc }}</td>
+                <td><td><a href="{{ route('urzadzenia.show', $urzadzenie->ID) }}">zarządzaj</a></td></td>
             </tr>
         @endforeach
 

@@ -28,7 +28,7 @@ class UrzadzeniaController extends Controller
      */
     public function create()
     {
-        //
+    	return view('urzadzenia.create');
     }
 
     /**
@@ -39,7 +39,20 @@ class UrzadzeniaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    	$urzadzenie = new Urzadzenia;
+    	$urzadzenie->nazwa = $request->nazwa;
+    	$urzadzenie->numer_kat = $request->numer_kat;
+    	$urzadzenie->data_zakupu = $request->data_zakupu;
+    	$urzadzenie->data_wymiany_filtr = $request->data_wymiany_filtr;
+    	$urzadzenie->czas_gwarancji = $request->czas_gwarancji;
+    	$urzadzenie->lokalizacja = $request->lokalizacja;
+    	$urzadzenie->urzadzenie_typ_id = $request->urzadzenie_typ_id;
+    	$urzadzenie->asortyment_id = $request->asortyment_id;
+    	$urzadzenie->ilosc = $request->ilosc;
+    	
+    	$urzadzenie->save();
+    	
+    	return redirect()->action('UrzadzeniaController@index');
     }
 
     /**
@@ -50,7 +63,9 @@ class UrzadzeniaController extends Controller
      */
     public function show($id)
     {
-        //
+    	$urzadzenie = Urzadzenia::find($id);
+    	
+    	return view('urzadzenia.show')->with('urzadzenie', $urzadzenie);
     }
 
     /**
@@ -61,7 +76,9 @@ class UrzadzeniaController extends Controller
      */
     public function edit($id)
     {
-        //
+    	$urzadzenie = Urzadzenia::find($id);
+    	 
+    	return view('urzadzenia.edit')->with('urzadzenie', $urzadzenie);
     }
 
     /**
@@ -73,7 +90,18 @@ class UrzadzeniaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    	\DB::table ( 'urzadzenie' )->where ( 'id', $id)->update ( array (
+    			'nazwa' => $request->nazwa,
+    			'numer_kat' => $request->numer_kat,
+    			'data_zakupu' => $request->data_zakupu,
+    			'data_wymiany_filtr' => $request->data_wymiany_filtr,
+    			'czas_gwarancji' => $request->czas_gwarancji,
+    			'lokalizacja' => $request->lokalizacja,
+    			'urzadzenie_typ_id' => $request->urzadzenie_typ_id,
+    			'asortyment_id' => $request->asortyment_id,
+    			'ilosc' => $request->ilosc
+    	) );
+    	return redirect ()->action ( 'UrzadzeniaController@index' );
     }
 
     /**
@@ -84,6 +112,8 @@ class UrzadzeniaController extends Controller
      */
     public function destroy($id)
     {
-        //
+    	\DB::table('urzadzenie')->where('ID', '=', $id)->delete();
+    	
+    	return redirect()->action('UrzadzeniaController@index');
     }
 }
