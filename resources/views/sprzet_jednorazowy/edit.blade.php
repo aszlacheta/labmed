@@ -54,7 +54,7 @@
 	  29 => '60mm', 30 => '100mm', 31 => '150mm', 32 => 'Eppendorf 200 µl', 33 => 'Eppendorf 1,5 ml', 34 => 'Eppendorf 2 ml', 35 => 'flakony 15 ml', 
 	  36 => 'flakony 50 ml', 37 => 'z zamknięciem dwupozycyjnym 5 ml', 38 => 'z zamknięciem dwupozycyjnym 13 ml', 39 => 'do zamrażania'), $sprzet->sprzet_jedn_podtyp_id) !!}
 	<br>
-	{!! Form::label('asortyment', 'Asortyment') !!}
+	{!! Form::label('asortyment_id', 'Asortyment') !!}
 	{!! Form::select('asortyment_id', array(1 => 'odczynniki', 2 => 'urządzenia'), $sprzet->asortyment_id) !!}
 	<br>
 	{!! Form::label('ilosc', 'Ilość') !!}

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class MaterialBiologiczny extends Model
 {
     protected $table = 'material_biologiczny';
+    public $timestamps = false;
 
     public function typ()
     {

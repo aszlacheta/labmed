@@ -4,6 +4,7 @@
 
     <h1>Lista dostępnych materiałów biologicznych</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące materiały biologiczne.</p>
+    <a href="{{ route('material_biologiczny.create') }}">Dodaj</a>
     <hr>
 
     <table class="table table-striped">
@@ -31,6 +32,7 @@
             <th>Lokalizacja</th>
             <th>Typ</th>
             <th>Asortyment</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -58,6 +60,7 @@
                 <td>{{ $material->lokalizacja }}</td>
                 <td>{{ $material->typ->nazwa }}</td>
                 <td>{{ $material->asortyment->nazwa }}</td>
+                <td><a href="{{ route('material_biologiczny.show', $material->ID) }}">zarządzaj</a></td>
             </tr>
         @endforeach
 

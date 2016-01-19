@@ -31,7 +31,7 @@ Dodaj nowe urządzenie
 	{!! Form::label('urzadzenie_typ_id', 'Typ urządzenia') !!}
 	{!! Form::select('urzadzenie_typ_id', array(1 => 'komory laminarne', 2 => 'urządzenia pomiarowe', 3 => 'drobny sprzęt labolatoryjny', 4 => 'wirówki', 5 => 'worteksy', 6 => 'mieszadła', 7 => 'pipetory')) !!}
 	<br>
-	{!! Form::label('asortyment', 'Asortyment') !!}
+	{!! Form::label('asortyment_id', 'Asortyment') !!}
 	{!! Form::select('asortyment_id', array(1 => 'odczynniki', 2 => 'urządzenia')) !!}
 	<br>
 	{!! Form::label('ilosc', 'Ilość') !!}

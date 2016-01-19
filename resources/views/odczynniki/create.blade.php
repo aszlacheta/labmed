@@ -43,7 +43,7 @@ Dodaj nowy odczynnik
 	{!! Form::label('odczynnik_typ', 'Typ odczynnika') !!}
 	{!! Form::select('odczynnik_typ_id', array(1 => 'odczynniki chemiczne', 2 => 'odczynniki biologiczne')) !!}
 	<br>
-	{!! Form::label('asortyment', 'Asortyment') !!}
+	{!! Form::label('asortyment_id', 'Asortyment') !!}
 	{!! Form::select('asortyment_id', array(1 => 'odczynniki', 2 => 'urządzenia')) !!}
 	<br>
 	
