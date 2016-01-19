@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SprzetJednorazowy extends Model
 {
     protected $table = 'sprzet_jedn';
+    public $timestamps = false;
 
     public function typ()
     {

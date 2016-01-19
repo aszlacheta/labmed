@@ -19,8 +19,8 @@ class SprzetJednorazowyController extends Controller
      */
     public function index()
     {
-        $sprzetJednorazowy = SprzetJednorazowy::get();
-        return view('sprzet_jednorazowy.index')->withSprzetJednorazowy($sprzetJednorazowy);
+        $sprzet = SprzetJednorazowy::get();
+        return view('sprzet_jednorazowy.index')->withSprzetJednorazowy($sprzet);
     }
 
     /**
@@ -30,7 +30,7 @@ class SprzetJednorazowyController extends Controller
      */
     public function create()
     {
-        //
+    	return view('sprzet_jednorazowy.create');
     }
 
     /**
@@ -41,7 +41,27 @@ class SprzetJednorazowyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    	$sprzet = new SprzetJednorazowy;
+    	$sprzet->nazwa = $request->nazwa;
+    	$sprzet->firma = $request->firma;
+    	$sprzet->numer_kat = $request->numer_kat;
+    	$sprzet->pojemnosc = $request->pojemnosc;
+    	$sprzet->kalibracja = $request->kalibracja;
+    	$sprzet->data_naprawy = $request->data_naprawy;
+    	$sprzet->opis_naprawy = $request->opis_naprawy;
+    	$sprzet->data_zakupu = $request->data_zakupu;
+    	$sprzet->data_wymiany_filtr = $request->data_wymiany_filtr;
+    	$sprzet->czas_gwarancji = $request->czas_gwarancji;
+    	$sprzet->lokalizacja = $request->lokalizacja;
+    	$sprzet->sprzet_jedn_typ_id = $request->sprzet_jedn_typ_id;
+    	$sprzet->sprzet_jedn_podtyp_id = $request->sprzet_jedn_podtyp_id;
+    	$sprzet->asortyment_id = $request->asortyment_id;
+    	$sprzet->ilosc = $request->ilosc;
+    	$sprzet->cena_za_szt = $request->cena_za_szt;
+    	
+    	$sprzet->save();
+    	
+    	return redirect()->action('SprzetJednorazowyController@index');
     }
 
     /**
@@ -52,7 +72,9 @@ class SprzetJednorazowyController extends Controller
      */
     public function show($id)
     {
-        //
+    	$sprzet  = SprzetJednorazowy::find($id);
+    	
+    	return view('sprzet_jednorazowy.show')->with('sprzet', $sprzet);
     }
 
     /**
@@ -63,7 +85,9 @@ class SprzetJednorazowyController extends Controller
      */
     public function edit($id)
     {
-        //
+    	$sprzet  = SprzetJednorazowy::find($id);
+    	 
+    	return view('sprzet_jednorazowy.edit')->with('sprzet', $sprzet);
     }
 
     /**
@@ -75,8 +99,27 @@ class SprzetJednorazowyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    	\DB::table ( 'sprzet_jedn' )->where ( 'id', $id)->update ( array (
+    			'nazwa' => $request->nazwa,
+    			'firma' => $request->firma,
+    			'numer_kat' => $request->numer_kat,
+    			'pojemnosc' => $request->pojemnosc,
+    			'kalibracja' => $request->kalibracja,
+    			'data_naprawy' => $request->data_naprawy,
+    			'opis_naprawy' => $request->opis_naprawy,
+    			'data_zakupu' => $request->data_zakupu,
+    			'data_wymiany_filtr' => $request->data_wymiany_filtr,
+    			'czas_gwarancji' => $request->czas_gwarancji,
+    			'lokalizacja' => $request->lokalizacja,
+    			'sprzet_jedn_typ_id' => $request->sprzet_jedn_typ_id,
+    			'sprzet_jedn_podtyp_id' => $request->sprzet_jedn_podtyp_id,
+    			'asortyment_id' => $request->asortyment_id,
+    			'ilosc' => $request->ilosc,
+    			'cena_za_szt' => $request->cena_za_szt
+    	) );
+    	return redirect ()->action ( 'SprzetJednorazowyController@index' );
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -86,6 +129,8 @@ class SprzetJednorazowyController extends Controller
      */
     public function destroy($id)
     {
-        //
+    	\DB::table('sprzet_jedn')->where('ID', '=', $id)->delete();
+    	
+    	return redirect()->action('SprzetJednorazowyController@index');
     }
 }

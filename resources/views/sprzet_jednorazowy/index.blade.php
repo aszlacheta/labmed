@@ -4,6 +4,7 @@
 
     <h1>Lista dostępnych sprzetów jednorazowych</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące sprzęty jednorazowe.</p>
+    <a href="{{ route('sprzet_jednorazowy.create') }}">Dodaj</a>
     <hr>
 
     <table class="table table-striped">
@@ -26,6 +27,7 @@
             <th>Asortyment</th>
             <th>Ilość</th>
             <th>Cena za szt.</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -48,6 +50,7 @@
                 <td>{{ $sprzet->asortyment->nazwa }}</td>
                 <td>{{ $sprzet->ilosc }}</td>
                 <td>{{ $sprzet->cena_za_szt }}</td>
+                <td><td><a href="{{ route('sprzet_jednorazowy.show', $sprzet->ID) }}">zarządzaj</a></td></td>
 
             </tr>
         @endforeach
