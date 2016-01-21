@@ -47,8 +47,8 @@
         </tbody>
     </table>
     <hr>
-<a href="{{ route('odczynniki.edit', $odczynnik->ID) }}">Edit</a>
-{!! Form::submit('Delete') !!}
+<a href="{{ route('odczynniki.edit', $odczynnik->ID) }}" class="btn btn-info">Edytuj</a>
+{!! Form::submit('Usuń', ['class' => 'btn btn-danger'])  !!}
 
 
 {!! Form::close() !!}

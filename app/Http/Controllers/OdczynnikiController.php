@@ -39,6 +39,14 @@ class OdczynnikiController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'nazwa' => 'required',
+            'firma' => 'required',
+            'numer_kat' => 'required',
+            'data_waznosci' => 'required|date|after:today',
+            'lokalizacja' => 'required',
+        ]);
+
         $odczynnik = new Odczynnik;
         $odczynnik->nazwa = $request->nazwa;
         $odczynnik->firma = $request->firma;
@@ -92,6 +100,15 @@ class OdczynnikiController extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, $id) {
+
+        $this->validate($request, [
+            'nazwa' => 'required',
+            'firma' => 'required',
+            'numer_kat' => 'required',
+            'data_waznosci' => 'required|date|after:today',
+            'lokalizacja' => 'required',
+        ]);
+
 		\DB::table ( 'odczynnik' )->where ( 'id', $id)->update ( array (
 				'nazwa' => $request->nazwa,
 				'firma' => $request->firma,
@@ -121,4 +138,5 @@ class OdczynnikiController extends Controller
         
         return redirect()->action('OdczynnikiController@index');
     }
+
 }
