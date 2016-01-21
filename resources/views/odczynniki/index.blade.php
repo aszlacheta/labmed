@@ -4,7 +4,7 @@
 
     <h1>Lista dostępnych odczynników</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące odczynniki.</p>
-	<a href="{{ route('odczynniki.create') }}">Dodaj</a>
+    <a href="{{ route('odczynniki.create') }}" class="btn btn-info">Dodaj</a>
     <hr>
 
 
@@ -39,10 +39,10 @@
                 <td>{{ $odczynnik->jednostka }}</td>
                 <td>{{ $odczynnik->masa_molowa }}</td>
                 <td>{{ $odczynnik->data_waznosci }}</td>
-                <td>{{ $odczynnik->cena_za_szt }}</td>
+                <td>{{ number_format($odczynnik->cena_za_szt, 2) }}</td>
                 <td>{{ $odczynnik->data_dodania }}</td>
                 <td>{{ $odczynnik->lokalizacja }}</td>
-                <td>{{ $odczynnik->temperatura }}</td>
+                <td>{{ number_format($odczynnik->temperatura, 1) }}</td>
                 <td>{{ $odczynnik->typ->typ }}</td>
                 <td>{{ $odczynnik->asortyment->nazwa }}</td>
                 <td><a href="{{ route('odczynniki.show', $odczynnik->ID) }}">zarządzaj</a></td>
