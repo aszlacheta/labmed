@@ -89,17 +89,6 @@ class OdczynnikiController extends Controller
 
         return view('odczynniki.edit')->with('odczynnik', $odczynnik);
     }
-<<<<<<< HEAD
-	
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param \Illuminate\Http\Request $request        	
-	 * @param int $id        	
-	 * @return \Illuminate\Http\Response
-	 */
-	public function update(Request $request, $id) {
-=======
 
     /**
      * Update the specified resource in storage.
@@ -109,7 +98,7 @@ class OdczynnikiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
->>>>>>> c449a277093a29d841959b942034b33bdd99aba5
+
 
         $this->validate($request, [
             'nazwa' => 'required',
@@ -117,23 +106,6 @@ class OdczynnikiController extends Controller
             'data_waznosci' => 'required|date|after:today',
         ]);
 
-<<<<<<< HEAD
-		\DB::table ( 'odczynnik' )->where ( 'id', $id)->update ( array (
-				'nazwa' => $request->nazwa,
-				'firma' => $request->firma,
-				'numer_kat' => $request->numer_kat,
-				'ilosc' => $request->ilosc,
-				'jednostka' => $request->jednostka,
-				'masa_molowa' => $request->masa_molowa,
-				'data_waznosci' => $request->data_waznosci,
-				'cena_za_szt' => $request->cena_za_szt,
-				'lokalizacja' => $request->lokalizacja,
-				'temperatura' => $request->temperatura,
-				'odczynnik_typ_id' => $request->odczynnik_typ_id,
-				'asortyment_id' => $request->asortyment_id 
-		) );
-		return redirect ()->action ( 'OdczynnikiController@index' );
-=======
         \DB::table ( 'odczynnik' )->where ( 'id', $id)->update ( array (
             'nazwa' => $request->nazwa,
             'firma' => $request->firma,
@@ -149,7 +121,7 @@ class OdczynnikiController extends Controller
             'asortyment_id' => $request->asortyment_id
         ) );
         return redirect ()->action ( 'OdczynnikiController@index' );
->>>>>>> c449a277093a29d841959b942034b33bdd99aba5
+
     }
 
     /**

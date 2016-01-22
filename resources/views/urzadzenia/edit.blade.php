@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    
+
     {!! Form::model($urzadzenie,['method' => 'patch', 'route' => ['urzadzenia.update', $urzadzenie->ID]]) !!}
 
     @if (count($errors) > 0)

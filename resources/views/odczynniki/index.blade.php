@@ -4,14 +4,9 @@
 
     <h1>Lista dostępnych odczynników</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące odczynniki.</p>
-<<<<<<< HEAD
-	<a href="{{ route('odczynniki.create') }}" class="btn btn-info">Dodaj</a>
-=======
+
     <a href="{{ route('odczynniki.create') }}" class="btn btn-info">Dodaj</a>
->>>>>>> c449a277093a29d841959b942034b33bdd99aba5
-    <hr>
-
-
+    
     <table class="table table-striped">
         <thead>
         <tr>
