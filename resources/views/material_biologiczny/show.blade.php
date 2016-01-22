@@ -2,11 +2,12 @@
 
 @section('content')
 
-    <h1>Lista dostępnych materiałów biologicznych</h1>
-    <p class="lead">Poniżej znajdziesz wszystkie istniejące materiały biologiczne.</p>
-    <a href="{{ route('material_biologiczny.create') }}">Dodaj</a>
-    <hr>
 
+
+
+{!! Form::open(['method' => 'delete', 'route' => ['material_biologiczny.destroy', $material->ID]]) !!}
+
+	<hr>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -32,11 +33,9 @@
             <th>Lokalizacja</th>
             <th>Typ</th>
             <th>Asortyment</th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
-        @foreach($material_biologiczny as $material)
             <tr>
                 <td>{{ $material->ID }}</td>
                 <td>{{ $material->rodzaj_komorek }}</td>
@@ -60,13 +59,16 @@
                 <td>{{ $material->lokalizacja }}</td>
                 <td>{{ $material->typ->nazwa }}</td>
                 <td>{{ $material->asortyment->nazwa }}</td>
-                <td><a href="{{ route('material_biologiczny.show', $material->ID) }}">zarządzaj</a></td>
             </tr>
-        @endforeach
-
         </tbody>
     </table>
     <hr>
+<a href="{{ route('material_biologiczny.edit', $material->ID) }}">Edit</a>
+{!! Form::submit('Delete') !!}
+
+
+{!! Form::close() !!}
+
 
 
 @stop

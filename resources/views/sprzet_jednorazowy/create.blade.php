@@ -56,7 +56,11 @@ Dodaj nowy sprzęt jednorazowy
 	  29 => '60mm', 30 => '100mm', 31 => '150mm', 32 => 'Eppendorf 200 µl', 33 => 'Eppendorf 1,5 ml', 34 => 'Eppendorf 2 ml', 35 => 'flakony 15 ml', 
 	  36 => 'flakony 50 ml', 37 => 'z zamknięciem dwupozycyjnym 5 ml', 38 => 'z zamknięciem dwupozycyjnym 13 ml', 39 => 'do zamrażania')) !!}
 <br>
+<<<<<<< HEAD
 {!! Form::label('asortyment', 'Asortyment') !!}
+=======
+{!! Form::label('asortyment_id', 'Asortyment') !!}
+>>>>>>> c449a277093a29d841959b942034b33bdd99aba5
 	{!! Form::select('asortyment_id', array(1 => 'odczynniki', 2 => 'urządzenia')) !!}
 	<br>
 	{!! Form::label('ilosc', 'Ilość') !!}

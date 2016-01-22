@@ -29,7 +29,11 @@
 	{!! Form::label('urzadzenie_typ_id', 'Typ urządzenia') !!}
 	{!! Form::select('urzadzenie_typ_id', array(1 => 'komory laminarne', 2 => 'urządzenia pomiarowe', 3 => 'drobny sprzęt labolatoryjny', 4 => 'wirówki', 5 => 'worteksy', 6 => 'mieszadła', 7 => 'pipetory'), $urzadzenie->urzadzenie_typ_id) !!}
 	<br>
+<<<<<<< HEAD
 	{!! Form::label('asortyment', 'Asortyment') !!}
+=======
+	{!! Form::label('asortyment_id', 'Asortyment') !!}
+>>>>>>> c449a277093a29d841959b942034b33bdd99aba5
 	{!! Form::select('asortyment_id', array(1 => 'odczynniki', 2 => 'urządzenia'), $urzadzenie->asortyment_id) !!}
 	<br>
 	{!! Form::label('ilosc', 'Ilość') !!}
