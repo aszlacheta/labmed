@@ -6,7 +6,7 @@
     <p class="lead">Poniżej znajdziesz wszystkie istniejące odczynniki.</p>
 
     <a href="{{ route('odczynniki.create') }}" class="btn btn-info">Dodaj</a>
-    
+
     <table class="table table-striped">
         <thead>
         <tr>
