@@ -111,6 +111,4 @@
 
 	{!! Form::close() !!}
 
-
-
 @stop

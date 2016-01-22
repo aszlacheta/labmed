@@ -70,5 +70,4 @@
     </div>
     {!! Form::close() !!}
 
-
 @stop
