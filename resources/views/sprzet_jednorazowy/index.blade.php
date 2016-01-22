@@ -4,10 +4,10 @@
 
     <h1>Lista dostępnych sprzetów jednorazowych</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące sprzęty jednorazowe.</p>
-    <a href="{{ route('sprzet_jednorazowy.create') }}">Dodaj</a>
+    <a href="{{ route('sprzet_jednorazowy.create') }}" class="btn btn-info">Dodaj</a>
     <hr>
 
-    <table class="table table-striped">
+    <table class="table table-striped" style="margin-left: -90px">
         <thead>
         <tr>
             <th>ID</th>
@@ -49,14 +49,13 @@
                 <td>{{ $sprzet->podtyp->nazwa }}</td>
                 <td>{{ $sprzet->asortyment->nazwa }}</td>
                 <td>{{ $sprzet->ilosc }}</td>
-                <td>{{ $sprzet->cena_za_szt }}</td>
+                <td>{{ number_format($sprzet->cena_za_szt, 2) }}</td>
                 <td><td><a href="{{ route('sprzet_jednorazowy.show', $sprzet->ID) }}">zarządzaj</a></td></td>
-
             </tr>
         @endforeach
-
         </tbody>
     </table>
+
     <hr>
 
 

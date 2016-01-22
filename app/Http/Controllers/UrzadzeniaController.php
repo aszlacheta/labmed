@@ -39,6 +39,14 @@ class UrzadzeniaController extends Controller
      */
     public function store(Request $request)
     {
+		$this->validate($request, [
+			'nazwa' => 'required',
+			'numer_kat' => 'required',
+			'data_zakupu' => 'required|date',
+			'data_wymiany_filtr' => 'date',
+			'czas_gwarancji' => 'required|date',
+		]);
+
     	$urzadzenie = new Urzadzenia;
     	$urzadzenie->nazwa = $request->nazwa;
     	$urzadzenie->numer_kat = $request->numer_kat;
@@ -90,6 +98,14 @@ class UrzadzeniaController extends Controller
      */
     public function update(Request $request, $id)
     {
+		$this->validate($request, [
+			'nazwa' => 'required',
+			'numer_kat' => 'required',
+			'data_zakupu' => 'required|date',
+			'data_wymiany_filtr' => 'date',
+			'czas_gwarancji' => 'required|date',
+		]);
+
     	\DB::table ( 'urzadzenie' )->where ( 'id', $id)->update ( array (
     			'nazwa' => $request->nazwa,
     			'numer_kat' => $request->numer_kat,

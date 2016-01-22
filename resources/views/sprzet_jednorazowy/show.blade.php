@@ -8,7 +8,7 @@
 {!! Form::open(['method' => 'delete', 'route' => ['sprzet_jednorazowy.destroy', $sprzet->ID]]) !!}
 
 	<hr>
-    <table class="table table-striped">
+    <table class="table table-striped" style="margin-left: -90px">
         <thead>
         <tr>
             <th>ID</th>
@@ -48,15 +48,15 @@
                 <td>{{ $sprzet->podtyp->nazwa }}</td>
                 <td>{{ $sprzet->asortyment->nazwa }}</td>
                 <td>{{ $sprzet->ilosc }}</td>
-                <td>{{ $sprzet->cena_za_szt }}</td>
+                <td>{{ number_format($sprzet->cena_za_szt, 2) }}</td>
 
             </tr>
         </tbody>
     </table>
     <hr>
 	
-<a href="{{ route('sprzet_jednorazowy.edit', $sprzet->ID) }}">Edit</a>
-{!! Form::submit('Delete') !!}
+<a href="{{ route('sprzet_jednorazowy.edit', $sprzet->ID) }}" class="btn btn-info">Edytuj</a>
+{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 
 
 {!! Form::close() !!}

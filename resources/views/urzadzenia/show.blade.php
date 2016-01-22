@@ -40,8 +40,8 @@
         </tbody>
     </table>
     <hr>
-<a href="{{ route('urzadzenia.edit', $urzadzenie->ID) }}">Edit</a>
-{!! Form::submit('Delete') !!}
+<a href="{{ route('urzadzenia.edit', $urzadzenie->ID) }}" class="btn btn-info">Edytuj</a>
+{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 
 
 {!! Form::close() !!}

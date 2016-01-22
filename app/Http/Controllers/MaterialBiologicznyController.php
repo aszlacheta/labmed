@@ -39,6 +39,15 @@ class MaterialBiologicznyController extends Controller
      */
     public function store(Request $request)
     {
+		$this->validate($request, [
+			'rodzaj _komorek' => 'required',
+			'rodzaj_tkanki' => 'required',
+			'data_dostarczenia' => 'date',
+			'data_izolacji' => 'date',
+			'data_zamrozenia' => 'date',
+			'data_gwarancji' => 'date',
+		]);
+
     	$materialBiologiczny = new MaterialBiologiczny;
     	
     	$materialBiologiczny->rodzaj_komorek = $request->rodzaj_komorek;
@@ -103,6 +112,15 @@ class MaterialBiologicznyController extends Controller
      */
     public function update(Request $request, $id)
     {
+		$this->validate($request, [
+			'rodzaj_komorek' => 'required',
+			'rodzaj_tkanki' => 'required',
+			'data_dostarczenia' => 'date',
+			'data_izolacji' => 'date',
+			'data_zamrozenia' => 'date',
+			'data_gwarancji' => 'date',
+		]);
+
     	\DB::table ( 'material_biologiczny' )->where ( 'id', $id)->update ( array (
     			'rodzaj_komorek' => $request->rodzaj_komorek,
     			'rodzaj_tkanki' => $request->rodzaj_tkanki,

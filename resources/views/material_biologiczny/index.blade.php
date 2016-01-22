@@ -4,10 +4,10 @@
 
     <h1>Lista dostępnych materiałów biologicznych</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące materiały biologiczne.</p>
-    <a href="{{ route('material_biologiczny.create') }}">Dodaj</a>
+    <a href="{{ route('material_biologiczny.create') }}" class="btn btn-info">Dodaj</a>
     <hr>
 
-    <table class="table table-striped">
+    <table class="table table-striped" style="margin-left: -90px">
         <thead>
         <tr>
             <th>ID</th>
@@ -46,16 +46,16 @@
                 <td>{{ $material->data_izolacji }}</td>
                 <td>{{ $material->organizm }}</td>
                 <td>{{ $material->data_zamrozenia }}</td>
-                <td>{{ $material->temperatura_przechowywania }}</td>
+                <td>{{ number_format($material->temperatura_przechowywania, 1) }}</td>
                 <td>{{ $material->ilosc_komorek }}</td>
-                <td>{{ $material->stezenie_RNA }}</td>
-                <td>{{ $material->stezenie_DNA }}</td>
-                <td>{{ $material->objetosc_tkanki }}</td>
+                <td>{{ number_format($material->stezenie_RNA, 2) }}</td>
+                <td>{{ number_format($material->stezenie_DNA, 2) }}</td>
+                <td>{{ number_format($material->objetosc_tkanki, 2) }}</td>
                 <td>{{ $material->sposob_utrwalenia }}</td>
                 <td>{{ $material->obserwacje }}</td>
                 <td>{{ $material->rodzaj_probowki }}</td>
                 <td>{{ $material->stezenie }}</td>
-                <td>{{ $material->objetosc_probki }}</td>
+                <td>{{ number_format($material->objetosc_probki, 2) }}</td>
                 <td>{{ $material->data_gwarancji }}</td>
                 <td>{{ $material->lokalizacja }}</td>
                 <td>{{ $material->typ->nazwa }}</td>

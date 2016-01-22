@@ -4,7 +4,7 @@
 
     <h1>Lista dostępnych urządzeń</h1>
     <p class="lead">Poniżej znajdziesz wszystkie istniejące urządzenia.</p>
-    <a href="{{ route('urzadzenia.create') }}">Dodaj</a>
+    <a href="{{ route('urzadzenia.create') }}" class="btn btn-info">Dodaj</a>
     <hr>
 
     <table class="table table-striped">

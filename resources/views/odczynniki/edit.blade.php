@@ -17,7 +17,7 @@
 		</div>
 	@endif
 
-	<div class="page-header" xmlns="http://www.w3.org/1999/html"><h1>Dodaj nowy odczynnik</h1></div>
+	<div class="page-header" xmlns="http://www.w3.org/1999/html"><h1>Wprowadź zmiany dla odczynnika</h1></div>
 
 	{!! Form::open(['route' => 'odczynniki.store']) !!}
 	<div class="container col-md-7">
@@ -59,7 +59,7 @@
 
 		<div class="form-group col-md-offset-1 col-md-5">
 			{!! Form::label('cena_za_szt', 'Cena za sztukę') !!}
-			{!! Form::number('cena_za_szt', $odczynnik->cena_za_szt, ['step' => '0.01', 'class' => 'form-control']) !!}
+			{!! Form::number('cena_za_szt', number_format($odczynnik->cena_za_szt, 2), ['step' => '0.01', 'class' => 'form-control']) !!}
 		</div>
 
 		<div class="form-group col-md-5">
@@ -69,7 +69,7 @@
 
 		<div class="form-group col-md-offset-1 col-md-5">
 			{!! Form::label('temperatura', 'Temperatura') !!}
-			{!! Form::number('temperatura', $odczynnik->temperatura, ['step' => '0.1', 'class' => 'form-control']) !!}
+			{!! Form::number('temperatura', number_format($odczynnik->temperatura, 2), ['step' => '0.1', 'class' => 'form-control']) !!}
 		</div>
 
 		<div class="form-group col-md-5">

@@ -37,7 +37,7 @@
             <td>{{ $odczynnik->jednostka }}</td>
             <td>{{ $odczynnik->masa_molowa }}</td>
             <td>{{ $odczynnik->data_waznosci }}</td>
-            <td>{{ $odczynnik->cena_za_szt }}</td>
+            <td>{{ number_format($odczynnik->cena_za_szt, 2) }}</td>
             <td>{{ $odczynnik->data_dodania }}</td>
             <td>{{ $odczynnik->lokalizacja }}</td>
             <td>{{ $odczynnik->temperatura }}</td>

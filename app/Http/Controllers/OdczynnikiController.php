@@ -41,10 +41,8 @@ class OdczynnikiController extends Controller
     {
         $this->validate($request, [
             'nazwa' => 'required',
-            'firma' => 'required',
             'numer_kat' => 'required',
             'data_waznosci' => 'required|date|after:today',
-            'lokalizacja' => 'required',
         ]);
 
         $odczynnik = new Odczynnik;
@@ -103,10 +101,8 @@ class OdczynnikiController extends Controller
 
         $this->validate($request, [
             'nazwa' => 'required',
-            'firma' => 'required',
             'numer_kat' => 'required',
             'data_waznosci' => 'required|date|after:today',
-            'lokalizacja' => 'required',
         ]);
 
         \DB::table ( 'odczynnik' )->where ( 'id', $id)->update ( array (

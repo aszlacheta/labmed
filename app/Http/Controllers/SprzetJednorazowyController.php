@@ -41,6 +41,14 @@ class SprzetJednorazowyController extends Controller
      */
     public function store(Request $request)
     {
+		$this->validate($request, [
+			'nazwa' => 'required',
+			'data_naprawy' => 'date',
+			'data_zakupu' => 'date',
+			'data_wymiany_filtr' => 'date',
+			'czas_gwarancji' => 'date',
+		]);
+
     	$sprzet = new SprzetJednorazowy;
     	$sprzet->nazwa = $request->nazwa;
     	$sprzet->firma = $request->firma;
@@ -99,6 +107,14 @@ class SprzetJednorazowyController extends Controller
      */
     public function update(Request $request, $id)
     {
+		$this->validate($request, [
+			'nazwa' => 'required',
+			'data_naprawy' => 'date',
+			'data_zakupu' => 'date',
+			'data_wymiany_filtr' => 'date',
+			'czas_gwarancji' => 'date',
+		]);
+
     	\DB::table ( 'sprzet_jedn' )->where ( 'id', $id)->update ( array (
     			'nazwa' => $request->nazwa,
     			'firma' => $request->firma,
