@@ -3,9 +3,8 @@
 -- tworzenie bazy danych
 
 DROP DATABASE IF EXISTS labmed;
-CREATE DATABASE labmed;
+CREATE DATABASE labmed CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE labmed;
-
 -- -----------------------------------------------------------------------------------
 -- zakładanie tabel
 
