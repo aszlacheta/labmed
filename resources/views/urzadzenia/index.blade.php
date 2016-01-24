@@ -36,7 +36,7 @@
                 <td>{{ $urzadzenie->typ->typ }}</td>
                 <td>{{ $urzadzenie->asortyment->nazwa }}</td>
                 <td>{{ $urzadzenie->ilosc }}</td>
-                <td><td><a href="{{ route('urzadzenia.show', $urzadzenie->ID) }}">zarządzaj</a></td></td>
+                <td><td><a href="{{ route('urzadzenia.show', $urzadzenie->ID) }}"><img src="../resources/views/images/settings.png"></a></td></td>
             </tr>
         @endforeach
 

@@ -50,7 +50,7 @@
                 <td>{{ $sprzet->asortyment->nazwa }}</td>
                 <td>{{ $sprzet->ilosc }}</td>
                 <td>{{ number_format($sprzet->cena_za_szt, 2) }}</td>
-                <td><td><a href="{{ route('sprzet_jednorazowy.show', $sprzet->ID) }}">zarządzaj</a></td></td>
+                <td><td><a href="{{ route('sprzet_jednorazowy.show', $sprzet->ID) }}"><img src="../resources/views/images/settings.png"></a></td></td>
             </tr>
         @endforeach
         </tbody>
