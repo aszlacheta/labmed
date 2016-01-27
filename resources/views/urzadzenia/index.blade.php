@@ -39,7 +39,7 @@
                     <td>{{ $urzadzenie->ilosc }}</td>
                     <td>
                     <td><a href="{{ route('urzadzenia.show', $urzadzenie->ID) }}"><img
-                                    src="../resources/views/images/settings.png"></a></td>
+                                    src="/labmed/resources/views/images/settings.png"></a></td>
                     </td>
                 </tr>
             @endforeach

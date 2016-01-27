@@ -46,7 +46,7 @@
                     <td>{{ $odczynnik->typ->typ }}</td>
                     <td>{{ $odczynnik->asortyment->nazwa }}</td>
                     <td><a href="{{ route('odczynniki.show', $odczynnik->ID) }}"><img
-                                    src="../resources/views/images/settings.png"></a></td>
+                                    src="/labmed/resources/views/images/settings.png"></a></td>
                 </tr>
             @endforeach
 
