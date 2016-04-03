@@ -20,11 +20,14 @@ Route::get('auth/logout', 'UsersController@destroy');
 // Registration routes...
 Route::post('/register', 'UsersController@store');
 
+
 Route::get('/', [
     'as' => 'home',
     'middleware' => 'auth',
     'uses' => 'PagesController@home'
 ]);
+
+Route::get('odczynniki/closeToExpirationDate', 'OdczynnikiController@getCloseToExpirationDate');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::resource('odczynniki', 'OdczynnikiController');

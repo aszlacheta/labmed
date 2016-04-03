@@ -146,8 +146,7 @@ class MaterialBiologicznyController extends Controller
     	) );
     	return redirect ()->action ( 'MaterialBiologicznyController@index' );
     }
-    
-    
+	    
     /**
      * Remove the specified resource from storage.
      *

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Odczynnik;
+use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -29,6 +30,22 @@ class OdczynnikiController extends Controller
     public function create()
     {
         return view('odczynniki.create');
+    }
+
+
+    public function closeToExpirationDate(){
+        $odczynniki = Odczynnik::all();
+        $now = time();
+        return Odczynnik::where('ID', '<', 4)->get();
+    }
+
+    public function getCloseToExpirationDate(){
+        $date = new \DateTime();
+        $date->add(new \DateInterval('P7D'));
+        $date = $date->format('Y-m-d');
+        
+        $odczynniki = Odczynnik::where('data_waznosci', '<=', $date)->get();
+        return response()->json($odczynniki);
     }
 
     /**

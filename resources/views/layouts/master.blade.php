@@ -1,10 +1,15 @@
+<?php
+$baseUrl = 'http://'.$_SERVER['HTTP_HOST'].'/';
+?>
 <!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laboratorium medyczne</title>
-    <link rel="stylesheet" href="http://localhost/labmed/resources/views/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ $baseUrl.'assets/css/bootstrap.min.css' }}">
+    <link rel="stylesheet" href="{{ $baseUrl.'assets/css/main.css' }}">
 </head>
 <body>
 
