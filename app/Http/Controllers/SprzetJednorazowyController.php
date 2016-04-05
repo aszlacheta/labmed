@@ -72,6 +72,18 @@ class SprzetJednorazowyController extends Controller
     	return redirect()->action('SprzetJednorazowyController@index');
     }
 
+	/**
+	 * @return JSON with
+	 */
+	public function getCloseToExpirationDate(){
+		$date = new \DateTime();
+		$date->add(new \DateInterval('P7D'));
+		$date = $date->format('Y-m-d');
+
+		$urzadzenia = SprzetJednorazowy::where('data_wymiany_filtr', '<=', $date)->get();
+		return response()->json($urzadzenia);
+	}
+
     /**
      * Display the specified resource.
      *

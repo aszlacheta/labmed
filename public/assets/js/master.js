@@ -18,8 +18,16 @@ var getUrzadzenia = function () {
     });
 };
 
+var getSprzetJednorazowy= function () {
+    $.get("sprzet_jednorazowy/closeToExpirationDate", function (data) {
+        data.forEach(function (item, index) {
+            addWarning("Zbliża się data wymiany filtra w \"<a href='urzadzenia/" + item.ID + "'>" + item.nazwa + '</a>\".');
+        });
+    });
+};
 
 $(document).ready(function () {
     getOdczynniki();
     getUrzadzenia();
+    getSprzetJednorazowy();
 });

@@ -37,6 +37,11 @@ Route::get('urzadzenia/closeToExpirationDate', [
     'uses' => 'UrzadzeniaController@getCloseToExpirationDate'
 ]);
 
+Route::get('sprzet_jednorazowy/closeToExpirationDate', [
+    'middleware' => 'auth',
+    'uses' => 'SprzetJednorazowyController@getCloseToExpirationDate'
+]);
+
 Route::group(['middleware' => 'auth'], function(){
     Route::resource('odczynniki', 'OdczynnikiController');
     Route::resource('urzadzenia', 'UrzadzeniaController');
