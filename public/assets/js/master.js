@@ -14,7 +14,7 @@ var getOdczynniki = function () {
     $.get("odczynniki/closeToExpirationDate", function (data) {
         data.forEach(function (item, index) {
             if(checkDate(item.data_waznosci)) {
-                addWarning("W krótce kończy się data (" + item.data_waznosci +") ważności odczynnika \"<a href='odczynniki/" + item.ID + "'>" + item.nazwa + '</a>\".');
+                addWarning("Zbliża się data (" + item.data_waznosci +") ważności odczynnika \"<a href='odczynniki/" + item.ID + "'>" + item.nazwa + '</a>\".');
             }
             else{
                 addImportantWarning("Minęła data (" + item.data_waznosci +") ważności odczynnika \"<a href='odczynniki/" + item.ID + "'>" + item.nazwa + '</a>\".');
