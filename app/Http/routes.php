@@ -27,7 +27,15 @@ Route::get('/', [
     'uses' => 'PagesController@home'
 ]);
 
-Route::get('odczynniki/closeToExpirationDate', 'OdczynnikiController@getCloseToExpirationDate');
+Route::get('odczynniki/closeToExpirationDate', [
+    'middleware' => 'auth',
+    'uses' => 'OdczynnikiController@getCloseToExpirationDate'
+]);
+
+Route::get('urzadzenia/closeToExpirationDate', [
+    'middleware' => 'auth',
+    'uses' => 'UrzadzeniaController@getCloseToExpirationDate'
+]);
 
 Route::group(['middleware' => 'auth'], function(){
     Route::resource('odczynniki', 'OdczynnikiController');

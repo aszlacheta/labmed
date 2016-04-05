@@ -10,6 +10,8 @@ $baseUrl = 'http://'.$_SERVER['HTTP_HOST'].'/';
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ $baseUrl.'assets/css/bootstrap.min.css' }}">
     <link rel="stylesheet" href="{{ $baseUrl.'assets/css/main.css' }}">
+    <script src="{{ $baseUrl.'assets/js/jquery-2.2.2.min.js' }}"></script>
+    <script src="{{ $baseUrl.'assets/js/master.js' }}"></script>
 </head>
 <body>
 
@@ -31,6 +33,9 @@ $baseUrl = 'http://'.$_SERVER['HTTP_HOST'].'/';
 
 <main>
     <div class="container">
+        <div id="warnings">
+
+        </div>
         @yield('content')
     </div>
 </main>

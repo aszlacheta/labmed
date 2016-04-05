@@ -63,6 +63,18 @@ class UrzadzeniaController extends Controller
     	return redirect()->action('UrzadzeniaController@index');
     }
 
+	/**
+	 * @return JSON with
+	 */
+	public function getCloseToExpirationDate(){
+		$date = new \DateTime();
+		$date->add(new \DateInterval('P7D'));
+		$date = $date->format('Y-m-d');
+
+		$urzadzenia = Urzadzenia::where('data_wymiany_filtr', '<=', $date)->get();
+		return response()->json($urzadzenia);
+	}
+
     /**
      * Display the specified resource.
      *

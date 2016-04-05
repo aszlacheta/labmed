@@ -22,6 +22,8 @@ class OdczynnikiController extends Controller
         return view('odczynniki.index')->withOdczynniki($odczynniki);
     }
 
+    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,6 +41,9 @@ class OdczynnikiController extends Controller
         return Odczynnik::where('ID', '<', 4)->get();
     }
 
+    /**
+     * @return JSON with reagents list which expiration date is closer than one week.
+     */
     public function getCloseToExpirationDate(){
         $date = new \DateTime();
         $date->add(new \DateInterval('P7D'));
