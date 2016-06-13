@@ -47,5 +47,25 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('urzadzenia', 'UrzadzeniaController');
     Route::resource('material_biologiczny', 'MaterialBiologicznyController');
     Route::resource('sprzet_jednorazowy', 'SprzetJednorazowyController');
+    Route::resource('kalkulator', 'KalkulatorController');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

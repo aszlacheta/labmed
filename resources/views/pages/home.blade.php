@@ -14,4 +14,7 @@
     <a href="{{ route('sprzet_jednorazowy.index') }}" class="btn btn-info">Sprzęt jednorazowy</a>
     <a href="{{ route('material_biologiczny.index') }}" class="btn btn-info">Materiał biologiczny</a>
 
+	<p class="lead">Dodatkowe narzędzia: </p>
+	<a href="{{ route('kalkulator.index') }}" class="btn btn-info">Kalkulatory chemiczne</a>
+
 @stop
