@@ -274,23 +274,22 @@
                   <td>stężenie procentowe</td>
                   <td> <input type="text" name="cp" size="6" value="10" /> %</td>
                   <td></td>
-                  <td class="opisPrawo">gęstość roztworu</td>
+                  <td>gęstość roztworu</td>
                   <td> <input type="text" name="d" size="6" value= "1.2" /> g/cm<sup>3</sup></td>
                </tr>
                <tr>
-                  <td class="opisPrawo">masa molowa</td>
+                  <td>masa molowa</td>
                   <td> <input type="text" name="M" size="6" value="50" /> g/mol</td>
                   <td></td>
-                  <td class="opisPrawo">stężenie molowe </td>
+                  <td>stężenie molowe </td>
                   <td><input type="text" name="cn" size="6" />
                      mol/dm<sup>3</sup>
                   </td>
                </tr>
                <tr>
-                  <td class="tdCenter" colspan="5">
-                     <input type="button" name="oblicz" value="Oblicz" onclick="liczStezenia()"
-                        class="exebut"/>
-                     <input type="reset" name="czysc" value="Wyczyść"  class="wyczysc"/>
+                  <td colspan="5">
+                     <input type="button" name="oblicz" value="Oblicz" onclick="liczStezenia()"/>
+                     <input type="reset" name="czysc" value="Wyczyść"/>
                   </td>
                </tr>
             </table>
@@ -351,8 +350,7 @@
                </tr>
                <tr>
                   <td colspan=2 align=center>
-                     <input type="button" name="przycisk" class="exebut"
-                        value=Oblicz onClick="liczProporcje()">
+                     <input type="button" name="przycisk" value=Oblicz onClick="liczProporcje()">
                      <input type="reset" name="czysc" value="Wyczyść"/>
                   </td>
                </tr>
@@ -363,7 +361,7 @@
                </tr>
             </table>
          </form>
-         <div class="op">
+         <div>
             Przykład propocji: 
             <pre>
  a     x
