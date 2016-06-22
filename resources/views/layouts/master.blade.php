@@ -8,10 +8,10 @@ $baseUrl = 'http://'.$_SERVER['HTTP_HOST'].'/';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laboratorium medyczne</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ $baseUrl.'assets/css/bootstrap.min.css' }}">
-    <link rel="stylesheet" href="{{ $baseUrl.'assets/css/main.css' }}">
-    <script src="{{ $baseUrl.'assets/js/jquery-2.2.2.min.js' }}"></script>
-    <script src="{{ $baseUrl.'assets/js/master.js' }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <script src="{{ asset('assets/js/jquery-2.2.2.min.js') }}"></script>
+    <script src="{{ asset('assets/js/master.js') }}"></script>
 </head>
 <body>
 
