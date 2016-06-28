@@ -28,6 +28,19 @@ CREATE TABLE asortyment (
   PRIMARY KEY (ID)
 );
 
+CREATE TABLE notatki (
+  ID    INT NOT NULL AUTO_INCREMENT,
+  nazwa VARCHAR(100),
+  opis  VARCHAR(1024),
+  data_utworzenia DATE,
+  user_id INT(10) UNSIGNED,
+  user_email VARCHAR(255),
+  user_name VARCHAR(255),
+
+  PRIMARY KEY (ID)
+);
+
+
 CREATE TABLE odczynnik (
   ID               INT NOT NULL AUTO_INCREMENT,
   nazwa            VARCHAR(100),
@@ -169,6 +182,8 @@ ALTER TABLE sprzet_jedn      ADD FOREIGN KEY (asortyment_id) REFERENCES asortyme
 ALTER TABLE sprzet_jedn_podtyp    ADD FOREIGN KEY (sprzet_jedn_typ_id) REFERENCES sprzet_jedn_typ (ID);
 ALTER TABLE material_biologiczny  ADD FOREIGN KEY (material_biologiczny_typ_id) REFERENCES material_biologiczny_typ (ID);
 ALTER TABLE material_biologiczny  ADD FOREIGN KEY (asortyment_id) REFERENCES asortyment (ID);
+ALTER TABLE notatki ADD FOREIGN KEY (user_id) REFERENCES users (ID);
+ALTER TABLE notatki ADD FOREIGN KEY (user_email) REFERENCES users (email);
 
 -- ---------------------------------------------------------------------------------------------
 -- wypłenienie przykładowymi danymi

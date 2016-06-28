@@ -16,5 +16,5 @@
 
 	<p class="lead">Dodatkowe narzędzia: </p>
 	<a href="{{ route('kalkulator.index') }}" class="btn btn-info">Kalkulatory chemiczne</a>
-
+	<a href="{{ route('notatki.index') }}" class="btn btn-info">Notatki</a>
 @stop
