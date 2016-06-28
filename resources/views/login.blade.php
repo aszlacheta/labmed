@@ -23,7 +23,7 @@
                         <h2>Zaloguj się do swojego konta</h2>
 
                         <form method="POST" action="{{url('auth/login')}}">
-                            {!! csrf_field() !!}
+                            {{  csrf_field() }}
 
                             <div class="form-group">
                                 <label for="email">Adres e-mail:</label>
@@ -55,7 +55,7 @@
                         <h2>Zarejestruj się!</h2>
 
                         <form method="POST" action="{{url('register')}}">
-                            {!! csrf_field() !!}
+                            {{  csrf_field() }}
                             <div class="form-group">
                                 <label for="name">Nazwa:</label>
                                 <input type="text" name="name" id="name" class="form-control"

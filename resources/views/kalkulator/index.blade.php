@@ -1,12 +1,13 @@
 @extends('layouts.master')
 @section('content')
-<html>
+    <html xmlns="http://www.w3.org/1999/html">
    <head>
       <script language="javascript" type="text/javascript">
          function roundto(f,n){
            nn=Math.pow(10,n)
            return (Math.round(f*nn)/nn);
-         }; 
+         }
+         ;
          function liczStezenia(){
            F=document.stezForm;
            if (isNaN(F.d.value) || isNaN(F.M.value)){
@@ -21,11 +22,11 @@
            };
            };
          };
-         
+
       </script>
       <script name="javascript" type="text/javascript">
          NEW=1;  EMPTY=2; OK=3; ERR=4; BRACE=5; CHAR=6; NOSYMB=7; MASS=8;
-         
+
          /*--------------------------------------------------------*/
          errTab=new Array(
          "0",
@@ -51,7 +52,7 @@
          pary['{']='}';
          pary['[']=']';
          pary['<']='>';
-         
+
          function UOPsSearch(s){
          la=0;
          while ((UOPs[la++] != s) && la<UOPs.length){}
@@ -61,7 +62,7 @@
          return la-1;
          };
          };
-         
+
          /*--------------------------------------------------------*/
          function isdigit(l){
          cyfry=/[0-9]/;
@@ -70,9 +71,9 @@
          }else{
           return false;
          };
-         
+
          };
-         
+
          function numb(l){
          w=0;
          if (i< formula.length){
@@ -84,7 +85,7 @@
          if (w==0) w=1;
          return w;
          };
-         
+
          function isupper(a){
          duzeLitery=/[A-Z]/;
          if (duzeLitery.test(a)){
@@ -101,7 +102,7 @@
           return false;
          };
          };
-         
+
          /*--------------------------------------------------------*/
          function tlumacz(frm){
          errpos=null;
@@ -116,7 +117,7 @@
             i=0;
            ile_stos=0;
            atsymb=new Array;
-           ns=new Object;   
+             ns = new Object;
            ns.nwy = new Array;
            ns.gdzie = new Array;
            ns.licznik=0;
@@ -124,7 +125,7 @@
             pre=numb(i);
           if (status==NEW){
             status=OK;
-         
+
             while(i<formula.length){
              if (nawiasyOtwierajace.test(formula[i]) ){
               ns.nwy[ns.licznik]=formula[i];
@@ -136,14 +137,15 @@
                 status=BRACE;
                 errpos=i;
                 return 1;
-              }; 
-              i++; 
+              }
+                 ;
+                 i++;
                zanawiasem=numb(i);
               for(j=ns.gdzie[ns.licznik-1];j<ile_prostych;j++){
                proste_ile_atm[j]*=zanawiasem;
               };
               ns.licznik--;
-             }else if (isupper(formula[i])){ 
+             } else if (isupper(formula[i])) {
               atsymb=new String;
               atsymb=formula[i++];
               if ((i<formula.length) && (islower(formula[i]))){
@@ -164,7 +166,7 @@
                pre=numb(i);
              }else{
                status=CHAR;
-               errpos=i; 
+                 errpos = i;
                return 1;
              };
             };
@@ -176,7 +178,7 @@
           };
          return 0;
          };
-         
+
          /*--------------------------------------------------------*/
          function masa_mol(){
          var i;
@@ -188,18 +190,19 @@
               return masa;
          };
          return -1.0;
-         };  
-         
+         }
+         ;
+
          function pos(){
          if (status>=0)
          return status;
          };
-         
+
          function test1(){
          id=UOPsSearch(document.kmmTest.symbol.value)
          document.kmmTest.masam.value=UOPm[id];
          };
-         
+
          //-------------------------------------------------------------------------
          function skladProcent(){
          var i;
@@ -212,15 +215,15 @@
               return sklad;
          };
          return "";
-         
+
          };
-         
-         
+
+
          function main(){
          status=NEW;
-         tlumacz(document.kmmForm.wzor.value);  
+             tlumacz(document.kmmForm.wzor.value);
          document.kmmForm.masam.value=masa_mol();
-         if (status != OK){ 
+             if (status != OK) {
          alert (errTab[status]  + "\nPozycja błędu: " + (++errpos))
          }else{
           document.kmmForm.sklad.value=skladProcent();
@@ -249,7 +252,7 @@
          };
            if (!jestx){
             alert("musisz wpisac w ktores pole 'x'");
-           }else{ 
+           } else {
              if ( nieliczba) {
                alert("w trzech polach musza byc liczby");
              }else{
@@ -262,42 +265,47 @@
          };
       </script>
    </head>
-   
-   
+
+
    <body>
       <div>
          <h1>Przeliczanie stężeń</h1>
-         <p>Przelicza stężenie procentowe na molowe i na odwrót.</p>
-         <form name="stezForm" id="stezForm">
-            <table align="center" width="600" cellspacing="0" cellpadding="2" >
-               <tr>
-                  <td>stężenie procentowe</td>
-                  <td> <input type="text" name="cp" size="6" value="10" /> %</td>
-                  <td></td>
-                  <td>gęstość roztworu</td>
-                  <td> <input type="text" name="d" size="6" value= "1.2" /> g/cm<sup>3</sup></td>
-               </tr>
-               <tr>
-                  <td>masa molowa</td>
-                  <td> <input type="text" name="M" size="6" value="50" /> g/mol</td>
-                  <td></td>
-                  <td>stężenie molowe </td>
-                  <td><input type="text" name="cn" size="6" />
-                     mol/dm<sup>3</sup>
-                  </td>
-               </tr>
-               <tr>
-                  <td colspan="5">
-                     <input type="button" name="oblicz" value="Oblicz" onclick="liczStezenia()"/>
-                     <input type="reset" name="czysc" value="Wyczyść"/>
-                  </td>
-               </tr>
-            </table>
-         </form>
+
+          <p class="lead">Przelicza stężenie procentowe na molowe i na odwrót.</p>
+
+          <div class="container col-md-11" style="margin-bottom: 20px">
+              <form name="stezForm" id="stezForm" style="clear: both">
+                  <div class="form-group col-md-5">
+                      <label for="cp">stężenie procentowe</label> (%)
+                      <input type="text" name="cp" size="6" value="10" class="form-control"/>
+                  </div>
+                  <div class="form-group col-md-5">
+                      <label for="d">gęstość roztworu</label> (g/cm<sup>3</sup>)
+                      <input type="text" name="d" size="6" value="1.2" class="form-control"/>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                      <label for="M">masa molowa</label> (g/mol)
+                      <input type="text" name="M" size="6" value="50" class="form-control"/>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                      <label for="cn">stężenie molowe</label> (mol/dm<sup>3</sup>)
+                      <input type="text" name="cn" size="6" class="form-control"/>
+                  </div>
+
+                  <div class="form-group col-md-11">
+                      <input type="button" name="oblicz" value="Oblicz" onclick="liczStezenia()" class="btn btn-info"/>
+                      <input type="reset" name="czysc" value="Wyczyść" class="btn btn-info"/>
+                  </div>
+              </form>
+          </div>
       </div>
+      <hr style="clear:both">
       <div>
          <h1>Kalkulator mas molowych</h1>
-         <p>
+
+          <p class="lead">
             Oblicza masy molowe ze wzoru sumarycznego.
          </p>
          <p>
@@ -306,64 +314,70 @@
             Wzory mogą zawierać nawiasy np: K4[Fe(CN)6], gwiazdkę na oznaczenie wody
             krystalizacyjnej np: CuSO4*5H2O. Inne przykłady: Na2SO4, C2H5OH, AlCl3.
          </p>
-         <p>Dodatkowo program oblicza ułamki wagowe poszczególnych pierwiastków w 
+
+          <p>Dodatkowo program oblicza ułamki wagowe poszczególnych pierwiastków w
             danej substancji.
          </p>
          <p>&nbsp; </p>
-         <form name="kmmForm">
-            <table align="center">
-               <tbody>
-                  <tr>
-                     <td>wzór sumaryczny</td>
-                     <td> <input name="wzor" size="20" type="text" /></td>
-                  </tr>
-                  <tr>
-                     <td colspan="2" align="center">
-                        <input name="przycisk" value="Oblicz" onclick="main()" type="button" />
-                        <input name="reset1" value="Wyczyść" type="reset" />
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>masa molowa</td>
-                     <td><input name="masam" size="20" type="text" /> g/mol</td>
-                  </tr>
-                  <tr>
-                     <td>skład (% wag.)</td>
-                     <td><textarea name="sklad" cols="20" rows="5"></textarea></td>
-                  </tr>
-               </tbody>
-            </table>
-         </form>
+
+          <div class="container col-md-11" style="margin-bottom: 20px">
+              <form name="kmmForm">
+
+                  <div class="form-group col-md-5">
+                      <label for="wzor">wzór sumaryczny</label>
+                      <input name="wzor" size="20" type="text" class="form-control"/>
+                  </div>
+
+                  <div class="form-group col-md-11">
+                      <input name="przycisk" value="Oblicz" onclick="main()" type="button" class="btn btn-info"/>
+                      <input name="reset1" value="Wyczyść" type="reset" class="btn btn-info"/>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                      <label for="masam">masa molowa</label> (g/mol)
+                      <input name="masam" size="20" type="text" class="form-control"/>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                      <label for="sklad">masa molowa</label> (g/mol)
+                      <textarea name="sklad" cols="20" rows="5" class="form-control"></textarea>
+                  </div>
+              </form>
+          </div>
       </div>
+      <hr style="clear:both">
       <div>
          <h1>Proporcja</h1>
-         Wpisz w trzy dowolne pola  wartosci liczbowe, a do czwartego znak 'x'.
-         <form name="proporcja">
-            <table align="center">
-               <tr>
-                  <td><input type="text" name="a" size="10"></td>
-                  <td><input type="text" name="b" size="10"></td>
-               </tr>
-               <tr>
-                  <td><input type="text" name="c" size="10"></td>
-                  <td><input type="text" name="d" size="10"></td>
-               </tr>
-               <tr>
-                  <td colspan=2 align=center>
-                     <input type="button" name="przycisk" value=Oblicz onClick="liczProporcje()">
-                     <input type="reset" name="czysc" value="Wyczyść"/>
-                  </td>
-               </tr>
-               <tr>
-                  <td colspan=2 align=center>
-                     <textarea rows=3 cols=20 name=t></textarea>
-                  </td>
-               </tr>
-            </table>
-         </form>
+
+          <p class="lead">Wpisz w trzy dowolne pola wartości liczbowe, a do czwartego znak 'x'.</p>
+
+          <div class="container col-md-11" style="margin-bottom: 20px">
+              <form name="proporcja">
+
+                  <div class="form-group col-md-5">
+                      <input type="text" name="a" size="10" class="form-control"/>
+                      <input type="text" name="b" size="10" class="form-control"/>
+                  </div>
+                  <div class="form-group col-md-5">
+                      <input type="text" name="c" size="10" class="form-control"/>
+                      <input type="text" name="d" size="10" class="form-control"/>
+                  </div>
+
+                  <div class="form-group col-md-11">
+                      <input type="button" name="przycisk" value=Oblicz onClick="liczProporcje()" class="btn btn-info">
+                      <input type="reset" name="czysc" value="Wyczyść" class="btn btn-info"/>
+                  </div>
+
+                  <div class="form-group col-md-5">
+                      <textarea rows=3 cols=20 name=t class="form-control"></textarea>
+                  </div>
+
+              </form>
+          </div>
          <div>
-            Przykład propocji: 
-            <pre>
+             <hr style="clear:both;">
+             Przykład proporcji:
+            <pre style="margin-bottom: 70px">
  a     x
 --- = ---
  b     c
