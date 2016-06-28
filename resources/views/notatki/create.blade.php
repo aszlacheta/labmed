@@ -29,7 +29,7 @@
 
 		<div class="col-md-5" style="margin-bottom: 15px">
 			{!! Form::submit('Dodaj', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
-		</div>
+		</div> 
 
 	</div>
 
