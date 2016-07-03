@@ -45,8 +45,7 @@
                     <td>{{ number_format($odczynnik->temperatura, 1) }}</td>
                     <td>{{ $odczynnik->typ->typ }}</td>
                     <td>{{ $odczynnik->asortyment->nazwa }}</td>
-                    <td><a href="{{ route('odczynniki.show', $odczynnik->ID) }}"><img
-                                    src="/assets/images/settings.png"></a></td>
+                    <td><a href="{{ route('odczynniki.show', $odczynnik->ID) }}"><img src="/labmed/resources/views/images/settings.png" width="40" height="40"></a></td>
                 </tr>
             @endforeach
 

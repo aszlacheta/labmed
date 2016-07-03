@@ -38,8 +38,7 @@
                     <td>{{ $urzadzenie->asortyment->nazwa }}</td>
                     <td>{{ $urzadzenie->ilosc }}</td>
                     <td>
-                    <td><a href="{{ route('urzadzenia.show', $urzadzenie->ID) }}"><img
-                                    src="/assets/images/settings.png"></a></td>
+                    <td><a href="{{ route('urzadzenia.show', $urzadzenie->ID) }}"><img src="/labmed/resources/views/images/settings.png" width="40" height="40"></a></td>
                     </td>
                 </tr>
             @endforeach

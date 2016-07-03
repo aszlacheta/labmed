@@ -52,8 +52,7 @@
                     <td>{{ $sprzet->ilosc }}</td>
                     <td>{{ number_format($sprzet->cena_za_szt, 2) }}</td>
                     <td>
-                    <td><a href="{{ route('sprzet_jednorazowy.show', $sprzet->ID) }}"><img
-                                    src="/assets/images/settings.png"></a></td>
+                    <td><a href="{{ route('sprzet_jednorazowy.show', $sprzet->ID) }}"><img src="/labmed/resources/views/images/settings.png" width="40" height="40"></a></td>
                     </td>
                 </tr>
             @endforeach

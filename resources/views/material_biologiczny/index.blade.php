@@ -61,8 +61,7 @@
                     <td>{{ $material->lokalizacja }}</td>
                     <td>{{ $material->typ->nazwa }}</td>
                     <td>{{ $material->asortyment->nazwa }}</td>
-                    <td><a href="{{ route('material_biologiczny.show', $material->ID) }}"><img
-                                    src="/assets/images/settings.png"></a></td>
+                    <td><a href="{{ route('material_biologiczny.show', $material->ID) }}"><img src="/labmed/resources/views/images/settings.png" width="40" height="40"></a></td>
                 </tr>
             @endforeach
 

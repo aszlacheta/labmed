@@ -22,7 +22,7 @@
                     <td>{{ $notatka->ID }}</td>
                     <td>{{ $notatka->nazwa }}</td>
                     <td>{{ $notatka->opis }}</td>
-                    <td><a href="{{ route('notatki.show', $notatka->ID) }}"><img src="/assets/images/settings.png"></a></td>
+                    <td><a href="{{ route('notatki.show', $notatka->ID) }}"><img src="/labmed/resources/views/images/settings.png" width="40" height="40"></a></td>
                 </tr>
             @endforeach
 
